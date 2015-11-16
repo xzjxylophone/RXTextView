@@ -7,8 +7,9 @@
 //
 
 #import "MainViewController.h"
-
+#import "RXTextView.h"
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet RXTextView *rxTextView;
 
 @end
 
@@ -17,12 +18,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+//    self.rxTextView.text = @"";
+    self.rxTextView.placeholder = @"textview默认文案";
+    
+    
+    NSLog(@"%@, %@", self.rxTextView, self.rxTextView.lblPlaceholder);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+// 一定要有此段代码
+#pragma mark - Override
+#ifdef __IPHONE_7_0
+- (UIRectEdge)edgesForExtendedLayout {
+    return UIRectEdgeNone;
+}
+#endif
 
 /*
 #pragma mark - Navigation

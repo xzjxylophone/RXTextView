@@ -9,12 +9,27 @@
 #import <UIKit/UIKit.h>
 
 
-// 类似于  IQTextView
+// 类似于
 
 
-// 带有默认字符的
+/*
+ 
+ 当直接在vc中使用的时候,一定要在VC中有如下的代码
+ 因为UITextView本身就是一个UIScrollView
+#pragma mark - Override
+#ifdef __IPHONE_7_0
+- (UIRectEdge)edgesForExtendedLayout {
+    return UIRectEdgeNone;
+}
+#endif
+ 
+ */
 
+
+// 带有默认文案的TextView
 @interface RXTextView : UITextView
+@property (nonatomic, readonly, strong) UILabel *lblPlaceholder;
 @property (nonatomic,copy) NSString *placeholder;
-
+// 刷新默认文案
+- (void)refreshPlaceholder;
 @end
