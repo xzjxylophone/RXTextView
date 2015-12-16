@@ -22,7 +22,7 @@
     self.rxTextView.placeholder = @"textview默认文案";
     
     
-    NSLog(@"%@, %@", self.rxTextView, self.rxTextView.lblPlaceholder);
+    NSLog(@"%@, %@", self.rxTextView, self.rxTextView.placeholderLabel);
 }
 
 - (void)didReceiveMemoryWarning {

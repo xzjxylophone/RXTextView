@@ -28,7 +28,7 @@
 
 // 带有默认文案的TextView
 @interface RXTextView : UITextView
-@property (nonatomic, readonly, strong) UILabel *lblPlaceholder;
+@property (nonatomic, readonly, strong) UILabel *placeholderLabel;
 @property (nonatomic,copy) NSString *placeholder;
 // 刷新默认文案
 - (void)refreshPlaceholder;

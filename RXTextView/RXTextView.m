@@ -9,29 +9,29 @@
 #import "RXTextView.h"
 
 @interface RXTextView ()
-@property (nonatomic, readwrite, strong) UILabel *lblPlaceholder;
+@property (nonatomic, readwrite, strong) UILabel *placeholderLabel;
 
 @end
 
 @implementation RXTextView
 
 #pragma mark - Proverty
-- (UILabel *)lblPlaceholder
+- (UILabel *)placeholderLabel
 {
-    if (_lblPlaceholder == nil) {
-        _lblPlaceholder = [[UILabel alloc] init];
-        _lblPlaceholder.numberOfLines = 0;
-        _lblPlaceholder.font = self.font;
-        _lblPlaceholder.backgroundColor = [UIColor clearColor];
-        _lblPlaceholder.textColor = [UIColor blackColor];
-        _lblPlaceholder.alpha = 0;
+    if (_placeholderLabel == nil) {
+        _placeholderLabel = [[UILabel alloc] init];
+        _placeholderLabel.numberOfLines = 0;
+        _placeholderLabel.font = self.font;
+        _placeholderLabel.backgroundColor = [UIColor clearColor];
+        _placeholderLabel.textColor = [UIColor blackColor];
+        _placeholderLabel.alpha = 0;
     }
-    return _lblPlaceholder;
+    return _placeholderLabel;
 }
 - (void)setPlaceholder:(NSString *)placeholder
 {
     _placeholder = placeholder;
-    self.lblPlaceholder.text = self.placeholder;
+    self.placeholderLabel.text = self.placeholder;
     [self refreshPlaceholder];
 }
 
@@ -42,16 +42,16 @@
     
     
     
-    [self addSubview:self.lblPlaceholder];
+    [self addSubview:self.placeholderLabel];
 }
 
 - (void)refreshPlaceholder
 {
     CGFloat alpha = self.text.length > 0 ? 0 : 1;
-    self.lblPlaceholder.alpha = alpha;
+    self.placeholderLabel.alpha = alpha;
     
-    [self.lblPlaceholder sizeToFit];
-    self.lblPlaceholder.frame = CGRectMake(7, 6, CGRectGetWidth(self.frame) - 14, CGRectGetHeight(self.lblPlaceholder.frame));
+    [self.placeholderLabel sizeToFit];
+    self.placeholderLabel.frame = CGRectMake(7, 6, CGRectGetWidth(self.frame) - 14, CGRectGetHeight(self.placeholderLabel.frame));
     [self setNeedsLayout];
     [self layoutIfNeeded];
     
