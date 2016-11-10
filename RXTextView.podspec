@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
   s.name     = "RXTextView"
-  s.version  = "0.2"
+  s.version  = "0.3"
   s.license  = "MIT"
   s.summary  = "RXTextView have a placeholder label in it"
   s.homepage = "https://github.com/xzjxylophone/RXTextView"

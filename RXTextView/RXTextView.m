@@ -49,7 +49,8 @@
 {
     CGFloat alpha = self.text.length > 0 ? 0 : 1;
     self.placeholderLabel.alpha = alpha;
-    
+    self.placeholderLabel.frame = CGRectMake(7, 6, self.frame.size.width - 14, self.frame.size.height - 12);
+
     [self.placeholderLabel sizeToFit];
     self.placeholderLabel.frame = CGRectMake(7, 6, CGRectGetWidth(self.frame) - 14, CGRectGetHeight(self.placeholderLabel.frame));
     [self setNeedsLayout];
