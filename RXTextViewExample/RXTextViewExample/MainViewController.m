@@ -9,7 +9,9 @@
 #import "MainViewController.h"
 #import "RXTextView.h"
 @interface MainViewController ()
-@property (weak, nonatomic) IBOutlet RXTextView *rxTextView;
+@property (strong, nonatomic) IBOutlet RXTextView *textView;
+//@property (weak, nonatomic) IBOutlet UIView *testView;
+//@property (weak, nonatomic) IBOutlet RXTextView *testTextView;
 
 @end
 
@@ -17,12 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-//    self.rxTextView.text = @"";
-    self.rxTextView.placeholder = @"textview默认文案";
     
     
-    NSLog(@"%@, %@", self.rxTextView, self.rxTextView.placeholderLabel);
+    
+    
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.navigationController.navigationBar.translucent = NO;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    self.textView = [[RXTextView alloc] initWithFrame:CGRectMake(0, 0, 100, 200)];
+    
+    self.textView.placeholder = @"textView默认文案";
+    self.textView.backgroundColor = [UIColor redColor];
+    
+    
+    
+    
+    UIView *tmpView = [[UIView alloc] initWithFrame:self.textView.frame];
+    [tmpView addSubview:self.textView];
+    
+    [self.view addSubview:tmpView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +48,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
+    
+//    2018-06-11 20:36:11.154649+0800 RXTextViewExample[484:185859] {{0, 0}, {375, 812}}
 
-// 一定要有此段代码
-#pragma mark - Override
-#ifdef __IPHONE_7_0
-- (UIRectEdge)edgesForExtendedLayout {
-    return UIRectEdgeNone;
 }
-#endif
+
+
+
+
+
+
 
 /*
 #pragma mark - Navigation
