@@ -24,7 +24,7 @@
     
     
     self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -53,6 +53,8 @@
     [super viewDidAppear:animated];
     
     NSLog(@"%@", NSStringFromCGRect(self.view.frame));
+    
+    NSLog(@"%@", self.view);
     
 //    2018-06-11 20:36:11.154649+0800 RXTextViewExample[484:185859] {{0, 0}, {375, 812}}
 

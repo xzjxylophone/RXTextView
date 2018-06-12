@@ -1,0 +1,13 @@
+
+
+target 'RXTextViewExample' do
+
+
+pod 'RXOCDebug'
+
+
+
+inhibit_all_warnings!
+
+end
+
