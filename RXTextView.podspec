@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
   s.name     = "RXTextView"
-  s.version  = "0.3"
+  s.version  = "0.4"
   s.license  = "MIT"
   s.summary  = "RXTextView have a placeholder label in it"
   s.homepage = "https://github.com/xzjxylophone/RXTextView"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source_files = 'RXTextView/*.{h,m}'
   s.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
-  s.platform = :ios, '5.0'
+  s.platform = :ios, '7.0'
 
 end
 
